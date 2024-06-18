@@ -6,11 +6,11 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 const Cart = () => {
-    const [cart, setCart] = useState(miniCartItems);
+    const [cart, setCart] = useState<CartItem[]>(miniCartItems);
 
-    const deleteCart = (id)  => {
-        setCart(cart.filter(item => item.key != id));
-    }
+    const deleteCart = (id: number) => {
+        setCart(cart.filter(item => item.key !== id));
+      };
   return (
     <>
         <Breadcrumb title='Cart' link='Cart' />
