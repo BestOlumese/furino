@@ -1,33 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Manrope;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.flexBetweenCenter {
+  @apply flex justify-between items-center;
+}
+
+.flexCenter {
+  @apply flex items-center;
+}
+
+.minicart-btn {
+  @apply px-8 py-1 text-sm border-primary-300 border-2 rounded-full text-primary-300 hover:text-white hover:bg-primary-300 ease-in duration-300;
+}
+
+.footer-col {
+  @apply flex flex-col gap-4;
+}
+
+.footer-btn {
+  @apply uppercase font-semibold text-black pb-[1px] border-b-2 border-black text-xs hover:border-primary-300 hover:text-primary-300;
+}
+
+.footer-input  {
+  @apply placeholder:text-gray-300 text-xs mr-2 border-b-2 border-black outline-none;
+}
+
+.banner-div {
+  @apply bg-primary-200 py-10 px-8 md:absolute max-md:w-full max-lg:top-[10%] max-lg:p-8 max-lg:w-[50%] max-lg:left-[45%] top-[20%] left-[55%] w-[40%] translate-x-[-50];
+}
+
+.product-badge {
+  @apply top-[10px] rounded-full absolute flex justify-center items-center right-[10px] text-white text-sm w-[35px] h-[35px];
+}
+
+.checker:hover .overlay-product {
+  display: flex;
+}
+
+.overlay-product {
+  @apply absolute top-0 h-full w-full bg-gray-800/40 flex-col justify-center items-center hidden;
+}
+
+.btn-outline {
+  @apply px-10 py-2 border-primary-300 border-2 text-primary-300 text-sm font-bold hover:text-white hover:bg-primary-300;
+}
+
+.btn-primary {
+  @apply px-6 py-2 text-sm font-bold text-white bg-primary-300;
+}
+
+.slider-wrapper .image-list {
+  @apply flex flex-nowrap gap-4 overflow-x-auto;
+}
+
+.slider-wrapper .image-list .image-box {
+  flex: 0 0 300px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.slider-wrapper .image-list .image-box .image-item {
+  width: 100%;
+  height: 100%;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox */
+.hidden-scrollbar {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+}
+
+.hidden-scrollbar {
+  overflow: -moz-scrollbars-none; /* Hide scrollbar in older Firefox versions */
+  -ms-overflow-style: none;  /* Hide scrollbar in IE 10+ */
+  scrollbar-width: none; /* Hide scrollbar in modern Firefox */
+  overflow: hidden; /* For hiding the scrollbar */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.chevron {
+  @apply bg-primary-300 text-white flex justify-center items-center rounded-full text-lg h-[30px] py-[20px] px-[10px] absolute top-[40%];
+}
+
+.chevron-left {
+  @apply left-[20px];
+}
+
+.chevron-right {
+  @apply right-[20px];
+}
+
+.filterBar {
+  @apply bg-primary-200 text-black flex max-md:flex-col justify-between max-md:justify-center max-md:items-center max-md:gap-4 px-[100px] py-5 w-full max-md:px-[30px] max-sm:py-4 max-lg:px-[50px];
+}
+
+.pag {
+  @apply bg-primary-200 text-black py-2 px-4 rounded-lg text-lg cursor-pointer;
+}
+
+.pag.active {
+  @apply bg-primary-300 text-white;
 }
